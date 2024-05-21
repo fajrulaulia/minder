@@ -1,0 +1,35 @@
+version: '3.0'
+
+services:
+  mysql:
+      image: mysql:8.0.19
+      container_name: minder-mysql-db
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      ports:
+        - '3306:3306'
+      environment:
+        MYSQL_ROOT_PASSWORD: NJdjefnerjNFREUIfnerfonerifnFUREBFnerufobnerif # Root Password Only Login With Root to got Grant Access
+        MYSQL_PASSWORD: ${MINDER_DB_PASS}
+        MYSQL_USER: ${MINDER_DB_USER}
+        MYSQL_DATABASE: ${MINDER_DB_NAME}
+      volumes:
+        - "./mysql-data:/var/lib/mysql:rw"
+      networks:
+        - minder_net
+
+  migrate:
+      image: migrate/migrate
+      container_name: minder-migrate
+      networks:
+        - minder_net
+      volumes:
+        - "./schema:/schema"
+      command: ["-path", "/schema/", "-database",  "mysql://fajrul:aulia@tcp(minder-mysql-db:3306)/minder_db", "up", "2"]
+      links: 
+        - mysql
+      depends_on:
+        - mysql
+
+networks:
+  minder_net:

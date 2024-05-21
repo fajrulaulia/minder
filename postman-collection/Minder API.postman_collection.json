@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "f6d46f88-8862-4578-b9f0-ccda5283afe9",
+		"name": "Minder API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24181211"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"fajrul_single_11\",\n    \"email\":\"fajrulaulia711@gmail.com\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"fajrulaulia72@gmail.com\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like Pass",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhanJ1bGF1bGlhNzJAZ21haWwuY29tIiwiZXhwIjoxNzE2NDA1MDAzLCJ1c2VybmFtZSI6ImZhanJ1bF9zaW5nbGVfMiJ9.z1zCclvYUNajee8tW-TtJjTprft8F5H7v_H8Z5gdiIY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"target\":\"fajrulaulia76@gmail.com\",\n    \"action\":\"like\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/matcher/action",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"matcher",
+						"action"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Recomendation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhanJ1bGF1bGlhNzJAZ21haWwuY29tIiwiZXhwIjoxNzE2NDA1MDAzLCJ1c2VybmFtZSI6ImZhanJ1bF9zaW5nbGVfMiJ9.z1zCclvYUNajee8tW-TtJjTprft8F5H7v_H8Z5gdiIY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"target\":\"fajrulaulia76@gmail.com\",\n    \"action\":\"like\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/matcher/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"matcher",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
