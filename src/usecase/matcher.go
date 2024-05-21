@@ -55,7 +55,11 @@ func (c *MatcherUsecaseStruct) LikePassAction(ctx context.Context, params *match
 		return err
 	}
 
-	if count >= 2 {
+	if count >= 10 {
+		if user1.SubscribedEndate == nil {
+			return fmt.Errorf("you reached limit")
+		}
+
 		if user1.SubscribedEndate != nil && user1.SubscribedEndate.After(time.Now()) {
 			return fmt.Errorf("you reached limit")
 		}
